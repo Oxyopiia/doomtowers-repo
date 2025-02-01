@@ -43,14 +43,17 @@ jobs:
 
         shell: python
 
-      - name: Get latest commit SHA
-        id: get_sha
-        run: echo "SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
+      - name: Get latest commit data
+        run: |
+          LAST_COMMIT_MESSAGE=$(git log -1 --pretty=format:%s -- data/)
+          LAST_COMMIT_SHA=$(git log -1 --pretty=format:%h -- data/)
+          echo "message=$LAST_COMMIT_MESSAGE" >> $GITHUB_ENV
+          echo "sha=$LAST_COMMIT_SHA" >> $GITHUB_ENV
 
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data/all_data.json
-          git commit -m "Update all_data.json for $SHA" || echo "No changes to commit"
+          git commit -m "$message ($sha)" || echo "No changes to commit"
           git push
