@@ -1,6 +1,6 @@
 {
     "Items.json": {
-        "comment": "TODO: Add expedition/pillars items, Add Set Data, check item name validity, check damage values.",
+        "comment": "TODO: Add expedition/pillars items, Add Set Data, check item name validity, check damage values. test",
         "items": [
             {
                 "itemName": "Pork Sword",
