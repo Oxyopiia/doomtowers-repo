@@ -6,7 +6,7 @@ permissions:
 on:
   push:
     paths:
-      - "data/*.json"  # Trigger only if JSON files in data/ change
+      - "data/*.json"
   workflow_dispatch:  # Allows manual triggering from GitHub UI
 
 jobs:
@@ -28,19 +28,17 @@ jobs:
           import os
 
           data_folder = "data"
-          output_file = os.path.join(data_folder, "all_data.json")
+          output_file = "all_data.json"
           merged_data = {}
 
-          # Iterate over all JSON files in the data folder
           for filename in os.listdir(data_folder):
-              if filename.endswith(".json") and filename != "all_data.json":
+              if filename.endswith(".json") and filename != "all_data.json": # precaution
                   with open(os.path.join(data_folder, filename), "r", encoding="utf-8") as f:
                       try:
                           merged_data[filename] = json.load(f)  # Store content under filename key
                       except json.JSONDecodeError:
-                          print(f"Skipping invalid JSON: {filename}")
+                          print(f"::warning file={filename}::Skipping invalid JSON: {filename}")
 
-          # Write merged content to all_data.json
           with open(output_file, "w", encoding="utf-8") as f:
               json.dump(merged_data, f, indent=4)
 
