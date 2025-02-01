@@ -1,5 +1,5 @@
 {
-    "comment": "TODO: Add expedition/pillars items, Add Set Data, check item name validity, check damage values. test",
+    "comment": "TODO: Add expedition/pillars items, Add Set Data, check item name validity, check damage values.",
     "items": [
         {
             "itemName": "Pork Sword",
