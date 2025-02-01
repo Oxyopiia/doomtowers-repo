@@ -62,4 +62,5 @@ jobs:
 
           git add data/all_data.json
           git commit -m "$message ($sha)" || echo "No changes to commit"
-          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          git pull --rebase https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/Oxyopiia/doomtowers-repo.git main
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/Oxyopiia/doomtowers-repo.git
