@@ -29,13 +29,18 @@ jobs:
 
           data_folder = "data"
           output_file = "all_data.json"
+          schemaVersion = 1
           
-          def build_json_structure(directory):
+          def build_json_structure(directory, isRoot=True):
               result = {}
+
+              if isRoot:
+                result["schemaVersion"] = schemaVersion
+              
               for item in os.listdir(directory):
                   path = os.path.join(directory, item)
                   if os.path.isdir(path):
-                      result[item] = build_json_structure(path)
+                      result[item] = build_json_structure(path, isRoot=False)
                   elif item.endswith(".json") and item != "all_data.json":
                       try:
                           with open(path, "r", encoding="utf-8") as f:
