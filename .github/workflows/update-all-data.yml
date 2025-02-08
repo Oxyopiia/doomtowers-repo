@@ -29,15 +29,22 @@ jobs:
 
           data_folder = "data"
           output_file = "all_data.json"
-          merged_data = {}
-
-          for filename in os.listdir(data_folder):
-              if filename.endswith(".json") and filename != "all_data.json": # precaution
-                  with open(os.path.join(data_folder, filename), "r", encoding="utf-8") as f:
+          
+          def build_json_structure(directory):
+              result = {}
+              for item in os.listdir(directory):
+                  path = os.path.join(directory, item)
+                  if os.path.isdir(path):
+                      result[item] = build_json_structure(path)
+                  elif item.endswith(".json") and item != "all_data.json":
                       try:
-                          merged_data[filename] = json.load(f)  # Store content under filename key
+                          with open(path, "r", encoding="utf-8") as f:
+                              result[item] = json.load(f)
                       except json.JSONDecodeError:
-                          print(f"::warning file={filename}::Skipping invalid JSON: {filename}")
+                          print(f"::warning file={item}::Skipping invalid JSON: {item}")
+              return result
+          
+          merged_data = build_json_structure(data_folder)
 
           with open(output_file, "w", encoding="utf-8") as f:
               json.dump(merged_data, f, indent=4)
