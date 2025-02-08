@@ -1,4 +1,5 @@
 {
+    "schemaVersion": 1,
     "Items.json": {
         "comment": "TODO: Add expedition/pillars items, Add Set Data, check item name validity, check damage values.",
         "items": [
