@@ -256,10 +256,5 @@
                 "abilityDamage": 15
             }
         ]
-    },
-    "test": {
-        "test.json": {
-            "randomItem": 12324567891234567890
-        }
     }
 }
