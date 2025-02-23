@@ -165,7 +165,7 @@
         },
         {
             "itemName": "Starblade",
-            "cooldown": 5,
+            "cooldown": 2,
             "set": "HEAVY",
             "setAmount": 2
         },
