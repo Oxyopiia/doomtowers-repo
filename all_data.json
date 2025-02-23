@@ -1,6 +1,6 @@
 {
     "schemaVersion": 1,
-    "sha": "bd9bf65",
+    "sha": "e6b83c6",
     "Items": {
         "comment": "TODO: Check damage values, add other items.",
         "items": [
@@ -168,7 +168,7 @@
             },
             {
                 "itemName": "Starblade",
-                "cooldown": 5,
+                "cooldown": 2,
                 "set": "HEAVY",
                 "setAmount": 2
             },
