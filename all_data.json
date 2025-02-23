@@ -1,7 +1,7 @@
 {
     "schemaVersion": 1,
-    "sha": "0d9dbf2",
-    "Items.json": {
+    "sha": "bd9bf65",
+    "Items": {
         "comment": "TODO: Check damage values, add other items.",
         "items": [
             {
