@@ -43,7 +43,13 @@
             "itemName": "8-Bit Katana",
             "cooldown": 10,
             "set": "DIGITAL",
-            "setAmount": 1
+            "setAmount": 1,
+            "soundEvents": [
+                {
+                    "soundName": "entity.player.attack.crit",
+                    "volume": 9999.0
+                }
+            ]
         },
         {
             "itemName": "Adventurer's Hook",
@@ -125,7 +131,19 @@
             "itemName": "Zip Bomb",
             "cooldown": 9,
             "set": "DEMOLITIONIST",
-            "setAmount": 2
+            "setAmount": 2,
+            "soundEvents": [
+                {
+                    "soundName": "block.note_block.bit",
+                    "pitch": 2.0,
+                    "volume": 9999.0
+                },
+                {
+                    "soundName": "block.note_block.bell",
+                    "pitch": 2.0,
+                    "volume": 9999.0
+                }
+            ]
         },
         {
             "itemName": "The Synthflesh",
@@ -161,7 +179,14 @@
             "itemName": "Star Bomb",
             "cooldown": 8,
             "set": "DEMOLITIONIST",
-            "setAmount": 2
+            "setAmount": 2,
+            "soundEvents": [
+                {
+                    "soundName": "item.trident.throw",
+                    "pitch": 1.0,
+                    "volume": 3.0
+                }
+            ]
         },
         {
             "itemName": "Starblade",
