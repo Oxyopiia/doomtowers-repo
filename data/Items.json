@@ -154,8 +154,8 @@
         {
             "itemName": "The Phantasm",
             "cooldown": 10,
-            "set": "DIGITAL",
-            "setAmount": 2
+            "set": "HEAVY",
+            "setAmount": 1
         },
         {
             "itemName": "Star Bomb",
