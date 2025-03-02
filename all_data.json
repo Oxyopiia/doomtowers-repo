@@ -1,6 +1,6 @@
 {
     "schemaVersion": 1,
-    "sha": "e6b83c6",
+    "sha": "99871c7",
     "Items": {
         "comment": "TODO: Check damage values, add other items.",
         "items": [
@@ -157,8 +157,8 @@
             {
                 "itemName": "The Phantasm",
                 "cooldown": 10,
-                "set": "DIGITAL",
-                "setAmount": 2
+                "set": "HEAVY",
+                "setAmount": 1
             },
             {
                 "itemName": "Star Bomb",
